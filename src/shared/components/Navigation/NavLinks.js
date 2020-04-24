@@ -5,8 +5,6 @@ import './NavLinks.css'
 
 class NavLinks extends  Component {
   render() {
-    const props = this.props;
-
     return <ul className="nav-links">
       <li>
         <NavLink to="/" exact>All Users</NavLink>
