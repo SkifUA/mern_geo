@@ -6,7 +6,9 @@ class SideDrawer extends Component {
   render() {
     const props = this.props;
 
-    return
+    return <aside className="side-drawer">
+      {props.children}
+    </aside>
   }
 }
 
