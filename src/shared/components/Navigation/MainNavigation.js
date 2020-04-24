@@ -17,27 +17,25 @@ class MainNavigation extends Component {
     }
   }
 
-  openDrawer = () => {
+  openDrawerHandler = () => {
     this.setState({drawerIsOpen: true})
   }
 
-  closeDrawer = () => {
+  closeDrawerHandler = () => {
     this.setState({drawerIsOpen: false})
   }
 
   render() {
 
     return <React.Fragment>
-      {this.state.drawerIsOpen && <Backdrop onClick={this.closeDrawer}/>}
-      {this.state.drawerIsOpen && (
-        <SideDrawer>
+      {this.state.drawerIsOpen && <Backdrop onClick={this.closeDrawerHandler}/>}
+      <SideDrawer show={this.state.drawerIsOpen } onClick={this.closeDrawerHandler}>
         <nav className="main-navigation__drawer-nav">
           <NavLinks />
         </nav>
       </SideDrawer>
-      )}
       <MainHeader>
-        <button className="main-navigation__menu-btn" onClick={this.openDrawer}>
+        <button className="main-navigation__menu-btn" onClick={this.openDrawerHandler}>
           <span />
           <span />
           <span />
