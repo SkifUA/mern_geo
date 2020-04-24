@@ -1,7 +1,7 @@
 import React from 'react'
 
-const NewPage = () => {
+const NewPlace = () => {
   return <h2>New page</h2>
 }
 
-export default NewPage
+export default NewPlace
