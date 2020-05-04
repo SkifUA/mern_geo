@@ -30,7 +30,6 @@ const DUMMY_PLACES = [
   }
 ];
 
-// TODO make via class !!!
 function UserPlaces() {
   const userId = useParams().userId
   const loadedPlace = DUMMY_PLACES.filter(place => place.creator === userId)
