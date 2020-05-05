@@ -80,6 +80,9 @@ const Auth = () => {
         });
 
         const responseData = await response.json();
+        if (!response.ok) {
+          throw new Error(responseData.message);
+        }
         setIsLoading(false);
         auth.login();
         console.log(responseData);
@@ -91,8 +94,14 @@ const Auth = () => {
     }
   };
 
+  const errorHandler = () => {
+    setError(null);
+  }
+
   return (
-    <Card className="authentication">
+    <React.Fragment>
+      <ErrorModal error={error} onClear={errorHandler} />
+      <Card className="authentication">
       {isLoading && <LoadingSpinner asOverlay /> }
       <h2>Login Required</h2>
       <hr />
@@ -134,6 +143,7 @@ const Auth = () => {
         Switch to {isLoginMode ? 'SignUp' : 'Login'}
       </Button>
     </Card>
+    </React.Fragment>
   );
 };
 
